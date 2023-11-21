@@ -11,8 +11,10 @@ public class UtilisateurController {
     private UtilisateurRepository utilisateurRepository;
 
     @PostMapping("/ajouter")
-    public @ResponseBody String ajouterUtilisateur(@RequestParam String nom,
-                                                   @RequestParam String role, @RequestParam String password) {
+    public @ResponseBody String ajouterUtilisateur(@RequestBody CreateUtilisateurCommande request) {
+        String nom = request.getNom();
+        String role = request.getRole();
+        String password = request.getPassword();
         Utilisateur utilisateur = new Utilisateur();
         utilisateur.setNom(nom);
         utilisateur.setRole(role);

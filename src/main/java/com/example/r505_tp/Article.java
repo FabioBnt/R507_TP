@@ -18,13 +18,21 @@ public class Article {
     @JoinColumn(name = "utilisateur_id")
     private Utilisateur auteur;
 
+    public Article(Utilisateur auteur) {
+        this.auteur = auteur;
+    }
+
+    public String getAuteur() {
+        return auteur.getNom();
+    }
 
     public String getDate() {
         return date;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setDate() {
+        java.util.Date date = new java.util.Date();
+        this.date = new Date(date.getTime()).toString();
     }
 
     public String getContenu() {
