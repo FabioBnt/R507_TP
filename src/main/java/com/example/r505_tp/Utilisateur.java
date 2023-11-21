@@ -10,8 +10,16 @@ public class Utilisateur {
     @GeneratedValue(strategy=javax.persistence.GenerationType.AUTO)
     private Long id;
     private String nom;
-    private String email;
     private String password;
+    private String role;
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
     public String getPassword() {
         return password;
@@ -37,11 +45,4 @@ public class Utilisateur {
         this.nom = name;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }
