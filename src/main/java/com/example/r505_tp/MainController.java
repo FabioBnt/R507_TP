@@ -21,5 +21,8 @@ public class MainController {
         return "Utilisateur ajouté";
     }
 
-
+    @GetMapping("/lister")
+    public @ResponseBody Iterable<Utilisateur> listerUtilisateurs() {
+        return utilisateurRepository.findAll();
+    }
 }
