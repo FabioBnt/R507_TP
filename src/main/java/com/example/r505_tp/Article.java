@@ -13,14 +13,18 @@ public class Article {
     private String date;
     private String contenu;
 
+    public Article(Utilisateur auteur) {
+        this.auteur = auteur;
+    }
+
     // Relation to utilisateur, many to one
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "utilisateur_id")
     private Utilisateur auteur;
 
-    public Article(Utilisateur auteur) {
-        this.auteur = auteur;
+    public Article() {
     }
+
 
     public String getAuteur() {
         return auteur.getNom();
