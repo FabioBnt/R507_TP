@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/index")
-public class MainController {
+public class UtilisateurController {
     @Autowired
     private UtilisateurRepository utilisateurRepository;
 
