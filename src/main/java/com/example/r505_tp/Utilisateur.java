@@ -1,6 +1,7 @@
 package com.example.r505_tp;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Utilisateur {
@@ -10,6 +11,7 @@ public class Utilisateur {
     private String nom;
     private String password;
     private String role;
+
 
     public String getRole() {
         return role;

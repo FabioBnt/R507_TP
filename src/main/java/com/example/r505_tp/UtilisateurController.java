@@ -10,6 +10,9 @@ public class UtilisateurController {
     @Autowired
     private UtilisateurRepository utilisateurRepository;
 
+    @Autowired
+    private ArticleRepository articleRepository;
+
     @PostMapping("/ajouter")
     public @ResponseBody String ajouterUtilisateur(@RequestBody CreateUtilisateurCommande request) {
         String nom = request.getNom();
@@ -27,4 +30,5 @@ public class UtilisateurController {
     public @ResponseBody Iterable<Utilisateur> listerUtilisateurs() {
         return utilisateurRepository.findAll();
     }
+
 }
